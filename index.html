@@ -4,9 +4,22 @@
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <style>
-.button {
-    background-color: #4CAF50;
+button {
+  background: #00BFFF;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  font-family: "Monaco", monospace;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  margin: 2px;
 }
+button:hover {
+  background: #1E90FF;
+}
+
 </style>
   </head>
   <body>
@@ -35,7 +48,7 @@
 
 // 3. Add event handler
           button.addEventListener ("click", function() {
-          alert("Here you go");
+          location.reload(true);
           });
       });
 
