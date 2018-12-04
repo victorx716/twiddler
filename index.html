@@ -20,6 +20,19 @@ button:hover {
   background: #1E90FF;
 }
 
+h1 {
+  color: #0099ff;
+  text-align: justify;
+}
+
+body {
+  background: #2BC0E4; 
+  background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4); 
+  background: linear-gradient(to right, #EAECC6, #2BC0E4);
+  font-family: Monaco;
+  font-size: 12px;
+  color: blue;
+}*/
 </style>
   </head>
   <body>
@@ -30,25 +43,33 @@ button:hover {
         var $body = $('body');
         $body.html('');
 
+        $("<h1>Twiddler</h1>").appendTo($body);
+        
+
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          var today = new Date();
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + today);
           $tweet.appendTo($body);
           index -= 1;
         }
-//1. Create button
+
           var button = document.createElement("button");
           button.innerHTML = "Click for new tweets!";
 
-// 2. Append somewhere
+
           var body = document.getElementsByTagName("body")[0];
           body.appendChild(button);
 
-// 3. Add event handler
+
           button.addEventListener ("click", function() {
           location.reload(true);
+          });
+
+        $("button").click(function(event){
+        $("span").text(event.timeStamp);
           });
       });
 
