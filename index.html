@@ -3,67 +3,50 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="jquery.timeago.js" type="text/javascript">
+    </script>
+    <link rel="stylesheet" href="styles.css">
   </head>
-
-<style>
-
-button {
-  background: #00BFFF;
-  border: 0;
-  color: white;
-  font-weight: bold;
-  font-family: "Monaco", monospace;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-  margin: 2px;
-  position: relative;
-
-}
-
-button:hover {
-  background: #1E90FF;
-}
-
-h1 {
-  color: #0099ff;
-  text-align: center;
-}
-
-body {
-  background: #2BC0E4; 
-  background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4); 
-  background: linear-gradient(to right, #EAECC6, #2BC0E4);
-  font-family: Monaco;
-  font-size: 12px;
-  color: blue;
-}
-
-</style>
 
   <body>
 
-    <h1>Twiddler</h1>
-    <button type="button" onclick="location.reload()">Refresh</button>
+  <div class="header">
+
+  <h1>Twitter</h1>
+  <button type="button" id="generateTweets">Refresh</button>
+
+  </div>
+
+  <div id="tweets">
+
+  </div>
 
     <script>
-
+        
       $(document).ready(function(){
-        var $body = $('body');
-        var index = streams.home.length - 1;
 
-        while(index >= 0){
+        var generateTweets = function() {
+        var $body = $('body');
+        //$body.html('');
+        var index = streams.home.length - 1; 
+        
+        while(index >= streams.home.length - 10){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          var today = new Date();
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + today);
-          $tweet.appendTo($body);
+          //var today = new Date();
+          $tweet.text(/*today + */' @' + tweet.user + ': ' + tweet.message);
+          $tweet.prependTo("#tweets");
           index -= 1;
         }
-      });
+        }
 
+        $('#generateTweets').on('click', generateTweets)
+
+
+      });
+  
     </script>
+
   </body>
 </html>
 

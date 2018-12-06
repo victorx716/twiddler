@@ -16,8 +16,9 @@ button:hover {
 }
 
 h1 {
-  color: #0099ff;
+  color: white;
   text-align: center;
+  font-family: "Palatino Linotype";
 }
 
 body {
@@ -26,19 +27,6 @@ body {
   background: linear-gradient(to right, #EAECC6, #2BC0E4);
   font-family: Monaco;
   font-size: 12px;
-  color: blue;
+  color: black;
 }
 
-#navbar {
-  color: #3b5998;
-  background-color: #f7f7f7;
-  padding: 11px;
-  border: 1px solid grey;
-  margin: 20px;
-}
-
-#navbar li {
-  display: inline-block;
-  padding: 5px;
-  border-left: 1px dotted blue;
-}
