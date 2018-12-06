@@ -33,14 +33,15 @@
         while(index >= streams.home.length - 10){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          //var today = new Date();
-          $tweet.text(/*today + */' @' + tweet.user + ': ' + tweet.message);
+          var today = new Date();
+          $tweet.text(today + ' @' + tweet.user + ': ' + tweet.message);
           $tweet.prependTo("#tweets");
           index -= 1;
         }
         }
 
         $('#generateTweets').on('click', generateTweets)
+
 
 
       });
