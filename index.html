@@ -21,7 +21,7 @@
   <div id="tweets">
   </div>
 
-  <div id="userTweets">
+  <div class="userTweets">
   </div>
 
     <script>
@@ -46,12 +46,15 @@
           }
         }
         $('#generateTweets').on('click', generateTweets)
-      });
+
 
       //Trying to allow user to click on username
-      $('#tweet_user').click(function() {
-        console.log('hi mom')
+      $('span.tweet_user').on('click', function() {
+        console.log($(this).text());
       })
+
+      });
+
 
     </script>
 
