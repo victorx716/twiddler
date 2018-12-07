@@ -40,18 +40,21 @@
 
             $tweet.html(today + ' @' + "<span class='tweet_user'>" + tweet.user + "</span>" + ': ' + tweet.message);
 
+      //Trying to allow user to click on username
+          $('.tweet_user').on('click', function() {
+            console.log($(this).text());
+          })
 
             $tweet.prependTo("#tweets");
             index -= 1;
+
+
           }
         }
         $('#generateTweets').on('click', generateTweets)
 
 
-      //Trying to allow user to click on username
-      $('span.tweet_user').on('click', function() {
-        console.log($(this).text());
-      })
+
 
       });
 
