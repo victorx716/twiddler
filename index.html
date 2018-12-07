@@ -14,7 +14,7 @@
 
   <div class="header">
   <img id="logo" src="https://img.icons8.com/nolan/64/000000/twitter.png">
-  <h1>Twitter</h1>
+  <h1 id="name">Twitter</h1>
   <button type="button" id="generateTweets">Refresh feed!</button>
   </div>
 
@@ -37,18 +37,40 @@
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
             var today = new Date();
-            $tweet.text(today + ' @' + tweet.user + ': ' + tweet.message);
+
+            $tweet.html(today + ' @' + "<span class='tweet_user'>" + tweet.user + "</span>" + ': ' + tweet.message);
+
+
             $tweet.prependTo("#tweets");
             index -= 1;
           }
         }
         $('#generateTweets').on('click', generateTweets)
       });
-  
+
+      //Trying to allow user to click on username
+      $('#tweet_user').click(function() {
+        console.log('hi mom')
+      })
+
     </script>
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
