@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Vic's Twitter</title>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <script src="jquery.timeago.js" type="text/javascript">
@@ -27,7 +28,7 @@
     <script>
         
       $(document).ready(function(){
-
+        var $userTweets = $('#userTweets')
         var generateTweets = function() {
           var $body = $('body');
           //$body.html('');
@@ -38,22 +39,57 @@
             var $tweet = $('<div></div>');
             var today = new Date();
 
-            $tweet.html(today + ' @' + "<span class='tweet_user'>" + tweet.user + "</span>" + ': ' + tweet.message);
+            $tweet.html(today + '<br>' + ' @' + "<span class='tweet_user'>" + tweet.user + "</span>" + ': ' + tweet.message);
+
 
       //Trying to allow user to click on username
           $('.tweet_user').on('click', function() {
-            console.log($(this).text());
+            var name = '';
+            name = ($(this).text());
+            if (name === 'shawndrost') {
+              for (var i = 0; i < (streams.users.shawndrost).length; i++) {
+                console.log(streams.users.shawndrost[i].message);
+              }
+            }
           })
+
+          $('.tweet_user').on('click', function() {
+            var name = '';
+            name = ($(this).text());
+            if (name === 'mracus') {
+              for (var i = 0; i < (streams.users.mracus).length; i++) {
+                console.log(streams.users.mracus[i].message);
+              }
+            }
+          })
+
+          $('.tweet_user').on('click', function() {
+            var name = '';
+            name = ($(this).text());
+            if (name === 'sharksforcheap') {
+              for (var i = 0; i < (streams.users.sharksforcheap).length; i++) {
+                console.log(streams.users.sharksforcheap[i].message);
+              }
+            }
+          })
+
+          $('.tweet_user').on('click', function() {
+            var name = '';
+            name = ($(this).text());
+            if (name === 'douglascalhoun') {
+              for (var i = 0; i < (streams.users.douglascalhoun).length; i++) {
+                console.log(streams.users.douglascalhoun[i].message);
+              }
+            }
+          })
+
 
             $tweet.prependTo("#tweets");
             index -= 1;
 
-
           }
         }
         $('#generateTweets').on('click', generateTweets)
-
-
 
 
       });
