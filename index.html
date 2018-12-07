@@ -28,7 +28,7 @@
     <script>
         
       $(document).ready(function(){
-        var $userTweets = $('#userTweets')
+        var $userTweets = $('<div></div>')
         var generateTweets = function() {
           var $body = $('body');
           //$body.html('');
@@ -48,8 +48,8 @@
             name = ($(this).text());
             if (name === 'shawndrost') {
               for (var i = 0; i < (streams.users.shawndrost).length; i++) {
-                console.log(streams.users.shawndrost[i].message);
-              }
+                alert(streams.users.shawndrost[i].message);
+              }2
             }
           })
 
@@ -58,7 +58,7 @@
             name = ($(this).text());
             if (name === 'mracus') {
               for (var i = 0; i < (streams.users.mracus).length; i++) {
-                console.log(streams.users.mracus[i].message);
+                alert(streams.users.mracus[i].message);
               }
             }
           })
@@ -68,7 +68,7 @@
             name = ($(this).text());
             if (name === 'sharksforcheap') {
               for (var i = 0; i < (streams.users.sharksforcheap).length; i++) {
-                console.log(streams.users.sharksforcheap[i].message);
+                alert(streams.users.sharksforcheap[i].message);
               }
             }
           })
@@ -78,7 +78,7 @@
             name = ($(this).text());
             if (name === 'douglascalhoun') {
               for (var i = 0; i < (streams.users.douglascalhoun).length; i++) {
-                console.log(streams.users.douglascalhoun[i].message);
+                alert(streams.users.douglascalhoun[i].message);
               }
             }
           })
