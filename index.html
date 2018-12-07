@@ -10,15 +10,18 @@
 
   <body>
 
+  <a id="credits" href="https://icons8.com/icon/44055/twitter">Twitter icon by Icons8</a>
+
   <div class="header">
-
+  <img id="logo" src="https://img.icons8.com/nolan/64/000000/twitter.png">
   <h1>Twitter</h1>
-  <button type="button" id="generateTweets">Refresh</button>
-
+  <button type="button" id="generateTweets">Refresh feed!</button>
   </div>
 
   <div id="tweets">
+  </div>
 
+  <div id="userTweets">
   </div>
 
     <script>
@@ -26,24 +29,20 @@
       $(document).ready(function(){
 
         var generateTweets = function() {
-        var $body = $('body');
-        //$body.html('');
-        var index = streams.home.length - 1; 
+          var $body = $('body');
+          //$body.html('');
+          var index = streams.home.length - 1; 
         
-        while(index >= streams.home.length - 10){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          var today = new Date();
-          $tweet.text(today + ' @' + tweet.user + ': ' + tweet.message);
-          $tweet.prependTo("#tweets");
-          index -= 1;
+          while(index >= streams.home.length - 10) {
+            var tweet = streams.home[index];
+            var $tweet = $('<div></div>');
+            var today = new Date();
+            $tweet.text(today + ' @' + tweet.user + ': ' + tweet.message);
+            $tweet.prependTo("#tweets");
+            index -= 1;
+          }
         }
-        }
-
         $('#generateTweets').on('click', generateTweets)
-
-
-
       });
   
     </script>
